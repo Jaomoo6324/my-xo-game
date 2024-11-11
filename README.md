@@ -11,6 +11,9 @@
 7.ได้ตาราง history ตามรูป                          
 ![image](https://github.com/user-attachments/assets/8759b00b-5032-4f0a-ae52-ec2092c04a86)
 
+8.เปิดโปรแกรม visual studio code ขึ้นมา เลือกโฟล์เดอร์ที่ต้องการ Clone project ลงไป    
+![image](https://github.com/user-attachments/assets/45920798-aebf-4c3c-af7f-58e25386900e)
+9.Copy link ในหน้า Git hub มา
                                          
 
 
