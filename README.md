@@ -33,7 +33,7 @@
 14.Terminal อันที่สอง ให้ใช้คำสั่ง npm start เพื่อเปิดเว็บไซต์
 ![image](https://github.com/user-attachments/assets/f3f73e41-39a0-48aa-a7d5-12585dc2d8be)
 
-15.หน้าวเว็บไซต์     
+15.หน้าเว็บไซต์     
 ![image](https://github.com/user-attachments/assets/68141fd6-2eb4-4253-a026-6ac0245f8d97)
 ![image](https://github.com/user-attachments/assets/908d2e33-455a-4deb-a047-7129e7545769)
 
