@@ -24,6 +24,7 @@
 ![image](https://github.com/user-attachments/assets/249574ff-76a8-4adc-a1be-651c90ba4ec3)
 
 12.เมื่อ cd my-xo-game แล้วหลังจากนั้น ให้ใช้ npm i เพื่อติดตั้ง node_modules
+
 ![image](https://github.com/user-attachments/assets/a2cf4d40-16be-4e78-96b7-040ca481d1ee)
 
 13.กด New Terminal อันแรก ให้ใช้คำสั้ง cd my-xo-game enterให้เข้าไปยัง my-xo-game ตามด้วย node server/server.js เพื่อให้ระบบ server เชื่อมต่อกับฐานข้อมูล
