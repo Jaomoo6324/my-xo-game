@@ -5,7 +5,7 @@
 5.กด Create a new SQL                            
 ![image](https://github.com/user-attachments/assets/c6d22a3c-9083-46a8-95c3-7343d9528bca)
 
-6.กดสร้างตารางตามรูป          
+6.คำสั่ง sql เพื่อ สร้างตารางตามรูป          
 ![image](https://github.com/user-attachments/assets/72f577b1-4ea8-4017-bd08-e55088a30566)
 
 7.ได้ตาราง history ตามรูป                          
@@ -15,7 +15,7 @@
 ![image](https://github.com/user-attachments/assets/45920798-aebf-4c3c-af7f-58e25386900e)
 
 9.Copy link ในหน้า Git hub มา                  
-![image](https://github.com/user-attachments/assets/d456a8f5-9124-4cf9-9e6c-45ed19edfe3a)
+![image](https://github.com/user-attachments/assets/37e2ffc5-5f71-4bc4-8b6e-60ed2f7444dd)
 
 10.ใช้คำสั่ง git clone
 ![image](https://github.com/user-attachments/assets/323d6aaa-4057-40c6-83b3-b016d07593dd)
