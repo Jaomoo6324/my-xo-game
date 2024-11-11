@@ -1,38 +1,326 @@
-.App {
+
+.App-container{
   text-align: center;
+  background-color: beige; /* สีพื้นหลัง */
+  min-height: 100vh; /* ทำให้ความสูงขั้นต่ำของ .App-container ครอบคลุมหน้าจอ */
+  width: auto;
+  /* display: auto; */
+  flex-direction: column;
+  justify-content: flex-start; /* จัดตำแหน่งเนื้อหากลางแนวตั้ง */
+  align-items: center; /* จัดตำแหน่งเนื้อหากลางแนวนอน */
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.text-title{
+  width: 100vw;
+  height: 100px;
+  color: rgb(235, 7, 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1f3540;
+  margin-bottom: 50px;
+  font-size: 60px;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.custom-flex-container {
+  width: 80px; /* กำหนดความกว้างเป็น 80% ของพาเรนต์ */
+  max-width: 120px; /* หรือกำหนดความกว้างสูงสุด */
+  margin: 0 auto; /* จัดให้อยู่ตรงกลางของหน้า */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.zise-table {
+  width: 100px; /* กำหนดความกว้าง label ให้เหมาะสม */
+  text-align: right; /* จัด label ให้ชิดขวา */
+  margin-right: 100px; /* เพิ่มระยะห่างระหว่าง label กับ input */
+}
+
+.text-center{
+  display: flex;
+  
+}
+
+.form-group {
+  display: auto;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.form-control {
+  text-align: left;
+  max-width: 150px;
+  margin-left: 10px;
+}
+
+.board {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.board-row {
+  display: flex;
+}
+
+.cell-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;  /* ขนาดปุ่มที่กำหนด */
+  height: 80px;
+  font-size: 28px;
+  margin: 5px;
+  cursor: pointer;
+  background: #1f3540;
+  border: 4px solid #0f1b21;
+  border-radius: 12px;
+  color: aliceblue;
+}
+
+.winning-cell {
+  background-color: red;
+  border-color: darkred;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  z-index: 1000;
+}
+
+.popup {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn2{
+  background-color: #04AA6D;
+  border: 4px solid #038b59;
+  border-radius: 50%;
   color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: transform 0.1s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.btn2:active {
+  transform: scale(0.95); /* ขยับปุ่มลง 4px เมื่อถูกกด */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเพื่อให้ดูเหมือนกด */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.game-mode-buttons {
+  flex-direction: column; /* จัดเรียงปุ่มจากบนลงล่าง */
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 50px; /* เพิ่มระยะห่างจากด้านบน */
+  display: flex;
+} 
+
+.btn-game-mode {
+  font-size: 36px;
+  padding: 15px 30;
+  max-width: 500px;
+  max-height: 300px;
+}
+
+/* Style สำหรับปุ่ม */
+.btn-game-mode2 {
+  flex-direction: column;
+  max-width: 500px;
+  font-size: 36px;
+  padding: 15px 30px;
+  margin: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease; /* ทำให้การเปลี่ยนแปลงมีการเคลื่อนไหว */
+  background-color: #07993f;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+.btn-game-mode1 {
+  flex-direction: column;
+  max-width: 500px;
+  font-size: 36px;
+  padding: 15px 30px;
+  margin: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease; /* ทำให้การเปลี่ยนแปลงมีการเคลื่อนไหว */
+  background-color: #1330d7;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+/* เปลี่ยนสีเมื่อปุ่มถูกเลือก */
+.btn-game-mode1.selected {
+  flex-direction: column;
+  background-color: #0b81ff; /* สีเข้มลงเมื่อเลือก */
+  opacity: 0.7; /* ทำให้ปุ่มจางลง */
+  transform: scale(1.1); /* ขยายขนาดปุ่มเมื่อเลือก */
+   box-shadow: 0 0 15px 5px rgba(3, 12, 187, 0.669);
+   cursor: pointer; 
+}
+
+.btn-game-mode2.selected {
+  background-color: #218838; /* สีเข้มลงเมื่อเลือก */
+  opacity: 0.7; /* ทำให้ปุ่มจางลง */
+  cursor: pointer; 
+  transform: scale(1.1); /* ขยายขนาดปุ่มเมื่อเลือก */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* เพิ่มการเคลื่อนไหว */
+  /* box-shadow: 0 0 15px 5px rgba(0, 255, 94, 0.7); */
+}
+
+/* เพิ่ม effect เมื่อมีการ hover */
+.btn-game-mode:hover {
+  background-color: #0056b3;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.btn-game-mode:focus {
+  outline: none;
+}
+
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+}
+
+.history ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.history li {
+  background-color: #f9f9f9;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.left-panel {
+  flex: 1; /* ให้พื้นที่ซ้ายยืดได้ */
+  padding-right: 10px; /* ระยะห่างด้านขวาของ left-panel */
+  margin-left: 350px;
+  max-width: 300px; /* กำหนดความกว้างสูงสุด */
+  min-width: 200px; /* กำหนดความกว้างขั้นต่ำ */
+}
+
+.right-panel {
+  flex: 2; /* ให้พื้นที่ขวากว้างกว่าซ้าย */
+  padding-left: 10px; /* ระยะห่างด้านซ้ายของ right-panel */
+  background-color: #98e2f4; /* พื้นหลังสีขาว */
+  border: 2px solid #373535; /* กรอบบาง ๆ สีเทา */
+  border-radius: 20px; /* มุมโค้ง */
+  padding: 20px; /* ระยะห่างภายใน */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* เงาเบา ๆ */
+  max-width: fit-content; /* กำหนดขนาดสูงสุดของคอนเทนเนอร์ */
+  max-height: fit-content;
+  margin: 0 auto; /* จัดให้อยู่ตรงกลาง */
+  text-align: center; /* จัดข้อความให้อยู่กลาง */
+  justify-content: center;
+  align-items: center;
+}
+
+.history {
+  margin-top: 0;
+  width: 250px;
+}
+
+.btn2 {
+  margin-top: 20px;
+}
+.btn2:hover {
+  background-color: #218838;
+} 
+
+.btn3{
+  background-color: #b60202;
+  border: 4px solid #f20818;
+  border-radius: 50%;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: transform 0.1s ease;
+}
+
+.btn:active {
+  transform: scale(0.95); /* ขยับปุ่มลง 4px เมื่อถูกกด */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเพื่อให้ดูเหมือนกด */
+}
+
+.btn:hover {
+  background-color: #c20a0a;
+}
+/* สไตล์สำหรับหัวข้อหลัก */
+h1 {
+  font-size: 3rem; /* ขนาดใหญ่ขึ้น */
+  color: #5ea612; /* สีส้มแดง */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* เพิ่มเงาให้ฟอนต์ */
+  font-family: 'Arial', sans-serif; /* เปลี่ยนฟอนต์ */
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out; /* เพิ่มการเคลื่อนไหว */
+  
+}
+
+/* สไตล์สำหรับหัวข้อรอง */
+h2 {
+  font-size: 2rem; /* ขนาดรองลงมา */
+  color: #0066ff; /* สีน้ำเงินเข้ม */
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  text-decoration: underline; /* ขีดเส้นใต้ */
+  margin-top: 10px;
+  animation: fadeIn 1.2s ease-in-out 0.5s; /* หน่วงเวลา */
+  margin-top: 50px; /* เพิ่มระยะห่างจากด้านบน */
+
+}
+
+/* เอฟเฟกต์การปรากฏ */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
